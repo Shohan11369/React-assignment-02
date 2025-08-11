@@ -68,6 +68,71 @@ export default function LocationDetails() {
           </button>
         </div>
       </div>
+
+      {/* Two-column layout */}
+      <div className="flex flex-col lg:flex-row gap-6">
+        {/* Left Side */}
+        <div className="lg:w-1/2 space-y-8">
+          {/* Location Info */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-2 text-gray-700">
+              <FiMapPin className="text-lg" />
+              <span className="font-medium">
+                Tulare County, Los Angeles, CA 23415
+              </span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-700">
+              <FiDollarSign className="text-lg" />
+              <span className="font-medium text-lg">$60,607,456.00</span>
+            </div>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              quibusdam repellendus ratione pariatur incidunt, iure mollitia
+              deleniti obcaecati quasi explicabo velit. Lorem ipsum dolor sit
+              amet consectetur adipisicing elit.
+            </p>
+          </div>
+
+          {/* Locations */}
+          <div>
+            <div className="flex justify-between items-center mb-3">
+              <h2 className="font-semibold">Locations</h2>
+              <Link
+                to="/locations"
+                className="text-sm text-gray-500 hover:underline flex items-center gap-1"
+              >
+                See all <FiChevronRight />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {locations.map((loc) => (
+                <div
+                  key={loc.id}
+                  className="bg-white border rounded shadow-sm overflow-hidden"
+                >
+                  <div className="relative">
+                    <img
+                      src={loc.image}
+                      alt={loc.title}
+                      className="w-full h-40 object-cover"
+                    />
+                    <span className="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1 rounded">
+                      {loc.badge}
+                    </span>
+                  </div>
+                  <div className="p-3">
+                    <h3 className="font-medium">{loc.title}</h3>
+                    <p className="text-xs text-gray-500">{loc.location}</p>
+                    <p className="font-semibold mt-1">
+                      ${loc.price.toLocaleString()}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
