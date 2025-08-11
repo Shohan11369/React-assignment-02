@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import { FaClock, FaMapMarkerAlt, FaDollarSign } from "react-icons/fa";
 
 function NewIncident() {
+  const navigate = useNavigate();
   return (
     <div className="p-6  max-w-3xl mx-auto mt-6">
       {/* Title */}
@@ -58,11 +61,12 @@ function NewIncident() {
       </div>
 
       {/* Submit Button */}
-      <div>
-        <button className=" flex items-center bg-blue-400 px-3 py-2 rounded-full mx-auto font-semibold hover:bg-[#F26922] hover:text-white">
-          Get started
-        </button>
-      </div>
+      <button
+        onClick={() => navigate("/new-incidents")}
+        className="flex items-center bg-blue-400 px-3 py-2 rounded-full mx-auto font-semibold hover:bg-[#F26922] hover:text-white"
+      >
+        Get started
+      </button>
     </div>
   );
 }
