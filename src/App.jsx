@@ -8,6 +8,7 @@ import DashboardWithChat from "./pages/DashboardWithChat";
 import Incidents from "./components/Incidents";
 import NewIncident from "./components/NewIncident";
 import NewIncidentsPage from "./components/NewIncidentsPage";
+import NextStepPage from "./components/NextStepPage";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/incidents" element={<Incidents />} />
           <Route path="/new-incident" element={<NewIncident />} />
           <Route path="/new-incidents" element={<NewIncidentsPage />} />
+          <Route path="/next-step" element={<NextStepPage />} />
         </Routes>
       </Router>
     </ThemeProvider>

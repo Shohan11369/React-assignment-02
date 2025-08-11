@@ -124,7 +124,6 @@ function NewIncidentsPage() {
       hover: "hover:bg-gray-200",
       textColor: "text-gray-600",
     },
-
     {
       icon: <FaWind className="text-gray-800 text-5xl mb-3" />,
       label: "Tornado",
@@ -139,7 +138,6 @@ function NewIncidentsPage() {
       hover: "hover:bg-blue-200",
       textColor: "text-blue-700",
     },
-
     {
       icon: <FaMountain className="text-red-600 text-5xl mb-3" />,
       label: "Volcanic Eruption",
@@ -147,7 +145,6 @@ function NewIncidentsPage() {
       hover: "hover:bg-red-200",
       textColor: "text-red-700",
     },
-
     {
       icon: <FaFireAlt className="text-red-600 text-5xl mb-3" />,
       label: "Wildfire",
@@ -160,8 +157,9 @@ function NewIncidentsPage() {
   return (
     <div className="max-w-5xl mx-auto p-6 mt-6">
       {/* Top bar */}
-      <div>
-        <div className="flex items-center justify-start space-x-4 mb-4">
+      <div className="flex items-center justify-between mb-4">
+        {/* Back/Close + Nav */}
+        <div className="flex items-center space-x-4">
           <button
             onClick={() => navigate(-1)}
             className="text-gray-500 hover:text-gray-900 text-2xl"
@@ -169,7 +167,6 @@ function NewIncidentsPage() {
           >
             <FaTimes />
           </button>
-
           <nav className="flex space-x-6 text-gray-700 font-semibold text-sm md:text-base">
             <Link
               to="/"
@@ -182,27 +179,31 @@ function NewIncidentsPage() {
             </Link>
           </nav>
         </div>
-        <h2 className="text-xl font-bold mb-1 inline-block">New Incidents</h2>
 
-        {/* Underline */}
-        <div className="mb-8 max-w-4xl mx-auto">
-          <div className="relative h-1 w-full bg-gray-300 rounded">
-            <div className="absolute top-0 left-0 h-1 w-1/4 bg-blue-500 rounded"></div>
-          </div>
+        {/* Next Step Button on the right */}
+        <div className="flex gap-3">
+          <button
+            onClick={() => navigate(-1)}
+            className="px-5 py-2 border border-gray-300 rounded-lg text-gray-700 bg-white hover:bg-gray-50"
+          >
+            Back
+          </button>
+          <button
+            onClick={() => navigate("/next-step")}
+            className="px-5 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600"
+          >
+            Next Step
+          </button>
         </div>
       </div>
 
-      {/* Buttons */}
-      <div className="flex justify-between mb-8 max-w-xs md:max-w-xl">
-        <button
-          onClick={() => navigate(-1)}
-          className="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400"
-        >
-          Back
-        </button>
-        <button className=" bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-          Next Step
-        </button>
+      <h2 className="text-xl font-bold mb-3 inline-block">New Incidents</h2>
+
+      {/* Underline */}
+      <div className="mb-8 max-w-4xl mx-auto">
+        <div className="relative h-1 w-full bg-gray-300 rounded">
+          <div className="absolute top-0 left-0 h-1 w-1/4 bg-blue-500 rounded"></div>
+        </div>
       </div>
 
       {/* Section Title */}
