@@ -92,6 +92,62 @@ function Dashboard() {
           </Button>
         </div>
       </div>
+
+      {/*  First Row - 3 Cards */}
+
+      <div className="grid md:flex gap-4 mb-4 ">
+        {incidents.slice(0, 4).map((item, index) => (
+          <Card key={index} className="flex-1 text-center md:text-start !mt-6">
+            <CardMedia
+              component="img"
+              height="200"
+              image={item.image}
+              alt={item.title}
+            />
+
+            <CardContent>
+              <Typography variant="h6" fontWeight="bold">
+                {item.title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {item.location}
+              </Typography>
+              <Typography variant="subtitle1" fontWeight="bold">
+                ${item.price.toLocaleString()}
+              </Typography>
+              <Typography variant="body2" className="mt-2">
+                {item.desc}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      {/* Second Row - 2 Cards */}
+      <div className="grid md:flex gap-4 mb-4">
+        {incidents.slice(4, 6).map((item, index) => (
+          <Card key={index} className="md:w-1/4  text-center md:text-start ">
+            <CardMedia
+              component="img"
+              height="200"
+              image={item.image}
+              alt={item.title}
+            />
+            <CardContent>
+              <Typography variant="h6">{item.title}</Typography>
+              <Typography variant="body2" color="text.secondary">
+                {item.location}
+              </Typography>
+              <Typography variant="subtitle1" className="mt-2 font-bold">
+                ${item.price.toLocaleString()}
+              </Typography>
+              <Typography variant="body2" className="mt-2">
+                {item.desc}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }
