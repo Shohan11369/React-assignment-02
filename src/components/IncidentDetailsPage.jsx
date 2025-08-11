@@ -54,6 +54,49 @@ const IncidentDetailsPage = () => {
       </div>
 
       {/* Content */}
+      <div className="max-w-6xl mx-auto px-6 py-8 space-y-8">
+        <div>
+          <h2 className="text-xl font-semibold">Where’s the incident?</h2>
+          <p className="text-sm text-gray-500">
+            Enter a GPS, address, or pin point on the map. Try to be as accurate
+            as possible, or click: Jurisdiction Wide
+          </p>
+
+          {/* Map Container */}
+          <div className="relative mt-6">
+            {/* Replace this with a real Map component */}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6512707.587322932!2d-124.59224181841037!3d37.15191479092749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2smy!4v1754924388170!5m2!1sen!2smy"
+              width="100%"
+              height="500"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Google Map"
+            ></iframe>
+
+            {/* Search Boxes */}
+            <div className="absolute top-4 left-4 flex flex-col gap-2">
+              <input
+                type="text"
+                placeholder="Enter incident address or GPS"
+                className="px-4 py-2 w-64 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
+              />
+              <input
+                type="text"
+                placeholder="Pinpoint damage"
+                className="px-4 py-2 w-64 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
+              />
+            </div>
+
+            {/* Pin Marker */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="w-6 h-6 bg-orange-500 rounded-full border-4 border-white shadow-lg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
