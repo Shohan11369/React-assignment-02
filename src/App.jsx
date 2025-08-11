@@ -9,6 +9,7 @@ import Incidents from "./components/Incidents";
 import NewIncident from "./components/NewIncident";
 import NewIncidentsPage from "./components/NewIncidentsPage";
 import NextStepPage from "./components/NextStepPage";
+import IncidentDetailsPage from "./components/IncidentDetailsPage";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/new-incident" element={<NewIncident />} />
           <Route path="/new-incidents" element={<NewIncidentsPage />} />
           <Route path="/next-step" element={<NextStepPage />} />
+          <Route path="/incident-details" element={<IncidentDetailsPage />} />
         </Routes>
       </Router>
     </ThemeProvider>
