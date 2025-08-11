@@ -65,7 +65,93 @@ function Incidents() {
   return (
     <div className="p-4 ml-6 mr-2">
       {/* top section */}
-      <h4>hello</h4>
+      <div className="grid md:flex justify-between items-center mb-5 mt-2">
+        <div>
+          <Typography variant="h7" gutterBottom>
+            Welcome Back <br />{" "}
+            <span className="text-3xl font-bold ">Incidents</span>
+          </Typography>
+        </div>
+        {/* Right - Search Boxes */}
+        <div className="flex gap-4 mt-3">
+          <TextField label="Search incident" variant="outlined" size="small" />
+          <TextField
+            label="Sort By: Date modified"
+            variant="outlined"
+            size="small"
+          />
+
+          <Button
+            component={Link}
+            to="/new-incident"
+            variant="contained"
+            color="primary"
+            sx={{
+              color: "white",
+              fontSize: { xs: "0.6rem", sm: "0.875rem" },
+              padding: { xs: "4px 8px", sm: "6px 16px" },
+              minWidth: { xs: "70px", sm: "auto" },
+            }}
+          >
+            New Incident
+          </Button>
+        </div>
+      </div>
+      {/*  First Row - 3 Cards */}
+
+      <div className="grid md:flex gap-4 mb-4 ">
+        {incidents.slice(0, 4).map((item, index) => (
+          <Card key={index} className="flex-1 text-center md:text-start !mt-6">
+            <CardMedia
+              component="img"
+              height="200"
+              image={item.image}
+              alt={item.title}
+            />
+
+            <CardContent>
+              <Typography variant="h6" fontWeight="bold">
+                {item.title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {item.location}
+              </Typography>
+              <Typography variant="subtitle1" fontWeight="bold">
+                ${item.price.toLocaleString()}
+              </Typography>
+              <Typography variant="body2" className="mt-2">
+                {item.desc}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      {/* Second Row - 2 Cards */}
+      <div className="grid md:flex gap-4 mb-4">
+        {incidents.slice(4, 6).map((item, index) => (
+          <Card key={index} className="md:w-1/4  text-center md:text-start ">
+            <CardMedia
+              component="img"
+              height="200"
+              image={item.image}
+              alt={item.title}
+            />
+            <CardContent>
+              <Typography variant="h6">{item.title}</Typography>
+              <Typography variant="body2" color="text.secondary">
+                {item.location}
+              </Typography>
+              <Typography variant="subtitle1" className="mt-2 font-bold">
+                ${item.price.toLocaleString()}
+              </Typography>
+              <Typography variant="body2" className="mt-2">
+                {item.desc}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }
