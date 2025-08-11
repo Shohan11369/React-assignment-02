@@ -116,7 +116,7 @@ export default function LocationDetails() {
                       alt={loc.title}
                       className="w-full h-40 object-cover"
                     />
-                    <span className="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1 rounded">
+                    <span className="absolute top-2 right-2 bg-white text-black text-xs font-semibold px-2 py-1 rounded">
                       {loc.badge}
                     </span>
                   </div>
@@ -125,6 +125,78 @@ export default function LocationDetails() {
                     <p className="text-xs text-gray-500">{loc.location}</p>
                     <p className="font-semibold mt-1">
                       ${loc.price.toLocaleString()}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Activities */}
+          <div>
+            <div className="flex justify-between items-center mb-3">
+              <h2 className="font-semibold">Activities</h2>
+              <Link
+                to="/activities"
+                className="text-sm text-gray-500 hover:underline flex items-center gap-1"
+              >
+                See all <FiChevronRight />
+              </Link>
+            </div>
+            <div className="space-y-3">
+              {activities.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center gap-3 bg-gray-50 p-3 rounded"
+                >
+                  <img
+                    src="Group1.png"
+                    alt=""
+                    className="w-16 h-16 rounded object-cover"
+                  />
+                  <div className="flex-1">
+                    <h3 className="font-medium text-sm">{item.name}</h3>
+                    <p className="text-xs text-gray-500">
+                      {item.location} • 16.1212, -122.1424
+                    </p>
+                    <p className="font-semibold">
+                      ${item.price.toLocaleString()}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Documents */}
+          <div>
+            <div className="flex justify-between items-center mb-3">
+              <h2 className="font-semibold">Documents</h2>
+              <Link
+                to="/documents"
+                className="text-sm text-gray-500 hover:underline flex items-center gap-1"
+              >
+                See all <FiChevronRight />
+              </Link>
+            </div>
+            <div className="space-y-3">
+              {documents.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center gap-3 bg-gray-50 p-3 rounded"
+                >
+                  <img
+                    src="Group2.png"
+                    alt=""
+                    className="w-16 h-16 rounded object-cover"
+                  />
+                  <div className="flex-1">
+                    <h3 className="font-medium text-sm">{item.name}</h3>
+                    <p className="text-xs text-gray-500">
+                      {item.location} • 16.1212, -122.1424
+                    </p>
+                    <p className="font-semibold">
+                      ${item.price.toLocaleString()}
                     </p>
                   </div>
                 </div>
