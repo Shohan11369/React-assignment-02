@@ -148,6 +148,15 @@ function Dashboard() {
           </Card>
         ))}
       </div>
+      {/* Bottom Right Button */}
+      <div className="flex justify-center md:justify-end">
+        <Button
+          variant="outlined"
+          className="!rounded-[100%] !text-white !text-xl !font-bold w-[50px] h-[50px] !bg-[#F26922] "
+        >
+          C
+        </Button>
+      </div>
     </div>
   );
 }
