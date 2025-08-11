@@ -62,7 +62,36 @@ function Dashboard() {
   ];
   return (
     <div className="p-4 ml-6 mr-2">
-      <h1>hello</h1>
+      {/* top section */}
+      <div className="grid md:flex justify-between items-center mb-5 mt-2">
+        <div>
+          <Typography variant="h7" gutterBottom>
+            Welcome Back <br />{" "}
+            <span className="text-3xl font-bold ">Dashboard</span>
+          </Typography>
+        </div>
+        {/* Right - Search Boxes */}
+        <div className="flex gap-4 mt-3">
+          <TextField label="Search incident" variant="outlined" size="small" />
+          <TextField
+            label="Sort By: Date modified"
+            variant="outlined"
+            size="small"
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{
+              color: "white",
+              fontSize: { xs: "0.6rem", sm: "0.875rem" },
+              padding: { xs: "4px 8px", sm: "6px 16px" },
+              minWidth: { xs: "70px", sm: "auto" },
+            }}
+          >
+            Cypher AI
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }
