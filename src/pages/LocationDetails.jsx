@@ -58,26 +58,26 @@ export default function LocationDetails() {
           <input
             type="text"
             placeholder="Search incident"
-            className="border rounded px-3 py-1 text-sm"
+            className="border rounded px-2 md:px-3 py-1 text-sm"
           />
-          <button className="border rounded px-3 py-1 text-sm">
+          <button className="border rounded px-2 md:px-3 py-1 text-xs md:text-sm">
             Sort By: Date modified
           </button>
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-3 py-1 rounded text-sm">
+          <button className="bg-orange-500 hover:bg-orange-600 text-white px-3 py-1 rounded text-xs md:text-sm">
             + New Location
           </button>
         </div>
       </div>
 
       {/* Two-column layout */}
-      <div className="flex flex-col lg:flex-row gap-6">
+      <div className="flex flex-col lg:flex-row gap-6 ">
         {/* Left Side */}
         <div className="lg:w-1/2 space-y-8">
           {/* Location Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-gray-700">
-              <FiMapPin className="text-lg" />
-              <span className="font-medium">
+              <FiMapPin className="text-lg mt-4" />
+              <span className="font-medium mt-4">
                 Tulare County, Los Angeles, CA 23415
               </span>
             </div>
@@ -85,7 +85,7 @@ export default function LocationDetails() {
               <FiDollarSign className="text-lg" />
               <span className="font-medium text-lg">$60,607,456.00</span>
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
               quibusdam repellendus ratione pariatur incidunt, iure mollitia
               deleniti obcaecati quasi explicabo velit. Lorem ipsum dolor sit
@@ -203,6 +203,14 @@ export default function LocationDetails() {
               ))}
             </div>
           </div>
+        </div>
+        {/* Right Side (Map) */}
+        <div className="lg:w-1/2 mt-10">
+          <p className="text-xs md:text-sm mb-2">Incident Map</p>
+          <img src="Map.png" alt="Incident Map" className="w-full rounded" />
+          <p className="text-xs text-gray-500 mt-1">
+            Start 19.1232, -118.2233 &nbsp; End 19.3245, -119.2323
+          </p>
         </div>
       </div>
     </div>
