@@ -10,32 +10,32 @@ export default function LocationDetails() {
       title: "Whitechapel Rd.",
       location: "Tulare County, Los Angeles, CA 23415",
       price: 1456654,
-      image: "https://picsum.photos/id/1011/400/300",
-      badge: "Re Building",
+      image: "Group1.png",
+      badge: "Building",
     },
     {
       id: 2,
       title: "Whitechapel Rd.",
       location: "Tulare County, Los Angeles, CA 23415",
       price: 1456654,
-      image: "https://picsum.photos/id/1012/400/300",
-      badge: "Re Building",
+      image: "Group2.png",
+      badge: "Building",
     },
     {
       id: 3,
       title: "Whitechapel Rd.",
       location: "Tulare County, Los Angeles, CA 23415",
       price: 1456654,
-      image: "https://picsum.photos/id/1013/400/300",
-      badge: "Re Building",
+      image: "Group1.png",
+      badge: "Building",
     },
     {
       id: 4,
       title: "Whitechapel Rd.",
       location: "Tulare County, Los Angeles, CA 23415",
       price: 1456654,
-      image: "https://picsum.photos/id/1014/400/300",
-      badge: "Re Building",
+      image: "Group1.png",
+      badge: "Building",
     },
   ];
 
@@ -51,7 +51,23 @@ export default function LocationDetails() {
 
   return (
     <div className="max-w-7xl mx-auto p-4">
-      <h1>hello</h1>
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
+        <h1 className="text-2xl font-bold">DR-4699 March 2023 Severe Storms</h1>
+        <div className="flex gap-2">
+          <input
+            type="text"
+            placeholder="Search incident"
+            className="border rounded px-3 py-1 text-sm"
+          />
+          <button className="border rounded px-3 py-1 text-sm">
+            Sort By: Date modified
+          </button>
+          <button className="bg-orange-500 hover:bg-orange-600 text-white px-3 py-1 rounded text-sm">
+            + New Location
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
